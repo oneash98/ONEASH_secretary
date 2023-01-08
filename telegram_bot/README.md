@@ -2,7 +2,7 @@ beautifulsoup4==4.10.0
 
 requests==2.27.1
 
-telegram==0.0.1
+python-telegram-bot==13.10
 
 <br/>
 
