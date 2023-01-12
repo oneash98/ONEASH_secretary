@@ -2,6 +2,8 @@ from Bot import MyBot
 from DB import MyDB
 from customFunctions import *
 from selenium.webdriver.common.by import By
+from selenium import webdriver
+import time
 
 bot_token = "봇토큰"
 channel_ID = "채널 id"
@@ -162,6 +164,7 @@ try:
     browser_sba.find_element(By.LINK_TEXT, "기업지원").click()
     browser_sba.find_element(By.XPATH, '//*[@id="ContentPlaceHolder1_MainContents_P_ORDER"]/option[2]').click()
     browser_sba.find_element(By.ID, "btn_search").click()
+    time.sleep(2)
 
     soup_sba = BeautifulSoup(browser_sba.page_source, "html.parser")
 
