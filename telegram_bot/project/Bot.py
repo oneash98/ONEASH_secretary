@@ -17,5 +17,5 @@ class MyBot:
                 self.bot.send_message(chat_id = chat_id, text = f"[{self.notice_titles[i]}]({self.notice_urls[i]})\n({self.notice_times[i]})", parse_mode = "Markdown", disable_web_page_preview = True)
 
     # 에러 메시지
-    def error_message(self, chat_id):
-        self.bot.send_message(chat_id = chat_id, text = "봇 오류 발생")
+    def error_message(self, chat_id, message):
+        self.bot.send_message(chat_id = chat_id, text = message)

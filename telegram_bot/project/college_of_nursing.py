@@ -42,5 +42,5 @@ try:
         latest_from_page.append(article_num)
     db_nursing.update_DB(latest_from_page)
 
-except:
-    bot_nursing.error_message(warning_ID)
+except Exception as e:
+    bot_nursing.error_message(warning_ID, f"간호대 공지 오류\n{e}")

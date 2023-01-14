@@ -76,8 +76,8 @@ try:
         five_from_yonseiVenture_normal.append(notice_id)
     db_yonseiVenture_normal.update_DB(five_from_yonseiVenture_normal)
 
-except:
-    bot_startup.error_message(warning_ID)
+except Exception as e:
+    bot_startup.error_message(warning_ID, f"연세대 창업지원단 오류\n{e}")
 
 
 #################### K-Startup ##########################
@@ -110,8 +110,8 @@ try:
         five_from_kstartup.append(notice_id)
     db_kstartup.update_DB(five_from_kstartup)
 
-except:
-    bot_startup.error_message(warning_ID)      
+except Exception as e:
+    bot_startup.error_message(warning_ID, f"k-startup 오류\n{e}")      
 
 
 
@@ -147,8 +147,8 @@ try:
         five_from_ccei.append(notice_id)
     db_ccei.update_DB(five_from_ccei)
 
-except:
-    bot_startup.error_message(warning_ID)  
+except Exception as e:
+    bot_startup.error_message(warning_ID, f"ccei 오류\n{e}")  
 
 
 ######################## SBA ###########################
@@ -199,8 +199,8 @@ try:
         five_from_sba.append(notice_id)
     db_sba.update_DB(five_from_sba)
 
-except:
-    bot_startup.error_message(warning_ID)  
+except Exception as e:
+    bot_startup.error_message(warning_ID, f"sba 오류\n{e}")  
 
 
 
