@@ -140,12 +140,14 @@ try:
                 bot_startup.notice_urls.append(f"https://ccei.creativekorea.or.kr/seoul/custom/notice_view.do?no={notice_id}")
 
     # DB 업데이트
-    five_from_ccei = []
-    five_notices_ccei = notice_ccei[:5]
-    for notice in five_notices_ccei:
-        notice_id = notice.a["onclick"].replace("fnDetailPage(", "").replace(")", "").split(",")[0]
-        five_from_ccei.append(notice_id)
-    db_ccei.update_DB(five_from_ccei)
+    id_from_ccei = []
+    for notice in notice_ccei:
+        if notice.has_attr("class"):
+            pass
+        else:
+            notice_id = notice.a["onclick"].replace("fnDetailPage(", "").replace(")", "").split(",")[0]
+            id_from_ccei.append(notice_id)
+    db_ccei.update_DB(id_from_ccei)
 
 except Exception as e:
     bot_startup.error_message(warning_ID, f"ccei 오류\n{e}")  
@@ -158,6 +160,8 @@ try:
     browser_options.headless = True
     browser_options.add_argument("window-size=1080,720")
     browser_options.add_argument(f"user-agent = {user_agent}")
+    browser_options.add_argument("no-sandbox")
+    browser_options.add_argument("disable-dev-shm-usage")
     browser_sba = webdriver.Chrome("./chromedriver", options = browser_options)
     browser_sba.get(url_sba)
 

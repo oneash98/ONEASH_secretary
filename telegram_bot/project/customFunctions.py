@@ -19,6 +19,8 @@ def create_soup_selenium(url, user_agent, wait_for = None):
         options = webdriver.ChromeOptions()
         options.headless = True
         options.add_argument(f"user-agent = {user_agent}")
+        options.add_argument("no-sandbox")
+        options.add_argument("disable-dev-shm-usage")
 
         browser = webdriver.Chrome("./chromedriver", options=options)
         browser.get(url)
